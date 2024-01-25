@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des Articles</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Titre</th>
+            <th scope="col">Contenu</th>
+            <th scope="col">Date de création</th>
+            <th scope="col">Date de modification</th>
+            <th scope="col">Catégorie</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for commentaire in commentaires %}
+            <tr>
+                <td>{{ commentaire.title }}</td>
+                <td>{{ commentaire.content }}</td>
+                <td>{{ commentaire.dateCreation|date }}</td>
+                <td>{{ commentaire.dateModification|date }}</td>
+                <td>{{ commentaire.category }}</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+<a href="{{ path('commentaires_new') }}" class="btn btn-success">Ajouter un Article</a>
+    
+{% endblock %}

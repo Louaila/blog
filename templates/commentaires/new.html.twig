@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Article{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un Article</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.dateCreation) }}
+    {{ form_row(form.dateModification) }}
+    {{ form_row(form.category) }}
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_commentaires') }}" class="btn btn-secondary">Retour à la liste</a>
+{% endblock %}
